@@ -1,15 +1,73 @@
 {
-  "name": "react-native-network-info",
-  "version": "0.2.0",
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/jbrodriguez/react-native-network-info.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/jbrodriguez/react-native-network-info.git",
+        "spec": "git+https://github.com/jbrodriguez/react-native-network-info.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:jbrodriguez/react-native-network-info.git",
+          "sshUrl": "git+ssh://git@github.com/jbrodriguez/react-native-network-info.git",
+          "httpsUrl": "git+https://github.com/jbrodriguez/react-native-network-info.git",
+          "gitUrl": "git://github.com/jbrodriguez/react-native-network-info.git",
+          "shortcut": "github:jbrodriguez/react-native-network-info",
+          "directUrl": "https://raw.githubusercontent.com/jbrodriguez/react-native-network-info/master/package.json"
+        }
+      },
+      "/Users/weixingsun/xconn_40"
+    ]
+  ],
+  "_from": "git+https://github.com/jbrodriguez/react-native-network-info.git",
+  "_id": "react-native-network-info@0.2.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/react-native-network-info",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/jbrodriguez/react-native-network-info.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/jbrodriguez/react-native-network-info.git",
+    "spec": "git+https://github.com/jbrodriguez/react-native-network-info.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:jbrodriguez/react-native-network-info.git",
+      "sshUrl": "git+ssh://git@github.com/jbrodriguez/react-native-network-info.git",
+      "httpsUrl": "git+https://github.com/jbrodriguez/react-native-network-info.git",
+      "gitUrl": "git://github.com/jbrodriguez/react-native-network-info.git",
+      "shortcut": "github:jbrodriguez/react-native-network-info",
+      "directUrl": "https://raw.githubusercontent.com/jbrodriguez/react-native-network-info/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/jbrodriguez/react-native-network-info.git#1362dd6cc1a6b4e4aa78e3403cd81cbd505859e1",
+  "_shasum": "d53176fcbb18289f9b8f3699e74d7a2398988e23",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/jbrodriguez/react-native-network-info.git",
+  "_where": "/Users/weixingsun/xconn_40",
+  "author": {
+    "name": "Corey Wilson",
+    "email": "corey@eastcodes.com",
+    "url": "https://github.com/powerfulninja"
+  },
+  "bugs": {
+    "url": "https://github.com/pusherman/react-native-network-info/issues"
+  },
+  "dependencies": {},
   "description": "Get local network information",
-  "main": "NetworkInfo.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:pusherman/react-native-network-info.git"
-  },
+  "devDependencies": {},
+  "gitHead": "1362dd6cc1a6b4e4aa78e3403cd81cbd505859e1",
+  "homepage": "https://github.com/pusherman/react-native-network-info#readme",
   "keywords": [
     "react-component",
     "react-native",
@@ -17,6 +75,18 @@
     "network",
     "lan"
   ],
-  "author": "Corey Wilson <corey@eastcodes.com> (https://github.com/powerfulninja)",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "NetworkInfo.js",
+  "name": "react-native-network-info",
+  "optionalDependencies": {},
+  "readme": "# react-native-network-info\n\nReact Native library for getting information about the devices network\n\n## Usage\n\nFirst you need to install react-native-network-info:\n\n```javascript\nnpm install react-native-network-info --save\n```\n\n### `iOS`\n\nIn XCode, in the project navigator, right click Libraries ➜ Add Files to [your project's name] Go to node_modules ➜ react-native-network-info and add the .xcodeproj file\n\nIn XCode, in the project navigator, select your project. Add the lib*.a from the network-info project to your project's Build Phases ➜ Link Binary With Libraries Click .xcodeproj file you added before in the project navigator and go the Build Settings tab. Make sure 'All' is toggled on (instead of 'Basic'). Look for Header Search Paths and make sure it contains both $(SRCROOT)/../../react-native/React and $(SRCROOT)/../../React - mark both as recursive.\n\nRun your project (Cmd+R)\n\n### `Android`\n\n* `android/settings.gradle`\n\n```gradle\n...\ninclude ':react-native-network-info'\nproject(':react-native-network-info').projectDir = new File(settingsDir, '../node_modules/react-native-network-info/android')\n```\n* `android/app/build.gradle`\n\n```gradle\ndependencies {\n\t...\n\tcompile project(':react-native-network-info')\n}\n```\n\n* register module (in MainActivity.java)\n\n```java\n...\n\nimport com.pusherman.networkinfo.RNNetworkInfoPackage; // <--- IMPORT\n\npublic class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {\n\t...\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        mReactRootView = new ReactRootView(this);\n\n        mReactInstanceManager = ReactInstanceManager.builder()\n                .setApplication(getApplication())\n                .setBundleAssetName(\"index.android.bundle\")\n                .setJSMainModuleName(\"index.android\")\n                .addPackage(new MainReactPackage())\n                .addPackage(new RNNetworkInfoPackage())      // <- ADD HERE\n                .setUseDeveloperSupport(BuildConfig.DEBUG)\n                .setInitialLifecycleState(LifecycleState.RESUMED)\n                .build();\n\n        mReactRootView.startReactApplication(mReactInstanceManager, \"YourProject\", null);\n\n        setContentView(mReactRootView);\n    }\n}\n```\n\n## Examples\n\n```javascript\n\n// require module\nvar NetworkInfo = require('react-native-network-info');\n\n// Get SSID\nNetworkInfo.getSSID(ssid => {\n  console.log(ssid);\n});\n\n// Get Local IP\nNetworkInfo.getIPAddress(ip => {\n  console.log(ip);\n});\n\n```\n\n## Dev Notes\nNotes on how this package was made can be [found here](http://eastcodes.com/packaging-and-sharing-react-native-modules \"Packaging and Sharing React Native Modules\").\n\n\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pusherman/react-native-network-info.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.2.0"
 }
